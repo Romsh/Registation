@@ -1,0 +1,4 @@
+Il faut possiblement rajouter 1 entité à la base de donnée 
+Il faut rajouter des fenêtres, ne pas hésiter à diviser des pages pour augmenter l'ergonomie !
+
+Ressenti :  L'application est trop petite, il faut l'étoffer !
