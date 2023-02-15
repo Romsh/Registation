@@ -1,0 +1,41 @@
+
+
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.open()" class="icone-bars" aria-label="icone-bars" *ngIf="isConnect">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <a style="color:white;" [routerLink]="'/dashboard'"><img src="assets/images/logo.png" alt="logo-navbar" id="logo-navbar">RegiStation</a>
+  <span class="example-spacer"></span>
+  <p>{{utilisateurSimple.prenom}}</p>
+  <button mat-icon-button class="" aria-label="icone-utilisateur" *ngIf="isConnect">
+    <mat-icon>person</mat-icon>
+  </button>
+  <button mat-icon-button class="" aria-label="icone-notifications" *ngIf="isConnect" >
+    <mat-icon matBadge="6" matBadgeColor="warn">notifications</mat-icon>
+  </button>
+  <button mat-icon-button class="" (click)="logout()" aria-label="icone-signout" *ngIf="isConnect" >
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- DEBUT sidenav container  -->
+<mat-sidenav-container class="sidenav-tool" >
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/dashboard'" (click)="sidenav.close()"><mat-icon class="icone-side" >dashboard</mat-icon>Tableau de bord</a>
+      <a mat-list-item [routerLink]="'/evenement/agenda'" (click)="sidenav.close()"><mat-icon class="icone-side">today</mat-icon>Agenda</a>
+      <a mat-list-item [routerLink]="'/materiel/liste'" (click)="sidenav.close()"><mat-icon class="icone-side" >local_gas_station</mat-icon>Matériel</a>
+      <a mat-list-item [routerLink]="'/document/liste'" (click)="sidenav.close()"><mat-icon class="icone-side" >description</mat-icon>Documents</a>
+      <a mat-list-item [routerLink]="'/moniteur'" (click)="sidenav.close()"><mat-icon class="icone-side" >video_label</mat-icon>Moniteur</a>
+      <a mat-list-item [routerLink]="'/garage'" (click)="sidenav.close()"><mat-icon class="icone-side" >directions_car</mat-icon>Garage</a>
+      <a mat-list-item [routerLink]="'/utilisateur/contact'" (click)="sidenav.close()"><mat-icon class="icone-side" >contact_support</mat-icon>Contactez-nous</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="cont1">
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

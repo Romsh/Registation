@@ -1,0 +1,19 @@
+.modal-body{
+  background-image: url("/assets/images/delete.jpg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  height: 300px;
+}
+
+.modal-header{
+    text-align: center;
+}
+
+.bouton-annuler{
+    color:#fff;
+    background-image: linear-gradient(to right, #CDDFA0, #6FD08C );
+    margin-left: 10%;
+    border:2px solid black;
+  }
+  
+  

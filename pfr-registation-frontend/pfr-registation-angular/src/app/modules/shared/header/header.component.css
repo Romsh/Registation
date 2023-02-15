@@ -1,0 +1,48 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .accordeon{
+margin-top: 50px;
+  }
+.mat-toolbar{
+  background-color:lightslategray;
+  position: sticky;
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+#logo-navbar{
+  width: 50px;
+  margin-right: 10px;
+}
+.mat-sidenav{
+  background-color:lightyellow;
+}
+
+.icone-side{
+ margin-right: 5px;
+}
+
+CSS
+#logo-big{
+  opacity: 0.2;
+  height: 100%;
+}
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+/* .sidenav-tool{
+ /* background-color:#ffd15b ;  */
+ /* background-image: url(/assets/images/cercle.png);
+ background-repeat:no-repeat;
+background-position:center;
+height : 88vh; */
+/* } */
+
+@media(max-width:600px){
+  .cont1{
+    margin-right:1rem;
+    overflow-x: hidden;
+  }
+}

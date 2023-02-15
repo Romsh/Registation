@@ -1,0 +1,61 @@
+.card-login{
+    width: 250px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+.mat-form-field{
+    display: block;
+}
+.position-icon-login{
+  text-align: center;
+  
+}
+.icon-login{
+    margin-top: 40px;
+    font-size: 100px;
+    color:#5B8E7D;
+}
+.icone-info-card{
+    margin-right: 10px;
+}
+.div-bouton{
+    margin-top: 10px;
+    text-align: center;
+}
+#logo{
+	opacity: 0.4;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+.col-gauche{
+    background-color: #F4E285;
+}
+.col-droite{
+    background-color: #5B8E7D;
+    height: 700px;
+}
+#nom-appli{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Racing Sans One', cursive;
+    font-size: 6em;
+    opacity: 0.8;
+}
+/* Second ROW */
+.second-row{
+    width: 100%;
+background-color: lightgoldenrodyellow;
+}
+
+agm-map {
+    height: 400px;
+}
+.backtop{
+    font-size: 50px;
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+}

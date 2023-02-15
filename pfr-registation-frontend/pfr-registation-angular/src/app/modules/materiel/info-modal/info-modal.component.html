@@ -1,0 +1,50 @@
+
+<div class="modal-body">
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header>      
+        <mat-card-title>{{materiel.marque}}  {{materiel.modele}}</mat-card-title>
+        <mat-card-subtitle>{{materiel.ref}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="/assets/images/toad.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <mat-list dense>
+            <mat-list-item>
+                <mat-icon matPrefix class="icone-info-card">place</mat-icon>
+               localisation :  {{materiel.localisation}}
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matPrefix class="icone-info-card">settings</mat-icon>
+               niveau d'état :  {{materiel.etat}}
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matPrefix class="icone-info-card">date_range</mat-icon>
+               date d'achat : {{materiel.dateAchat}}
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matPrefix class="icone-info-card">euro_symbol</mat-icon>
+             prix d'achat : {{materiel.prix}} €
+          </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+
+</div>
+<div class="modal-footer">
+  <form #getIdMaterielUpdate=ngForm>
+    <input type="hidden" name=idMaterielUpdate [(ngModel)]=materiel.idMat required #idMaterielUpdate="ngModel">
+
+    <button mat-mini-fab class="bouton-modifier" (click)="redirectToUpdate(materiel.idMat)">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </form>
+
+  <form #getIdMaterielUtils=ngForm>
+    <input type="hidden" name=idMaterielUtils [(ngModel)]=materiel.idMat required #idMaterielUtils="ngModel">
+    <button mat-mini-fab color="warn" id="bouton-supprimer" (click)="deleteModal(materiel.idMat)">
+      <mat-icon>delete_sweep</mat-icon>
+    </button>
+  </form>
+  <button mat-raised-button color="primary" class="bouton-fermer" (click)="onNoClick()">
+    Ok
+  </button>
+</div>

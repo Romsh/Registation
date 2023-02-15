@@ -1,0 +1,124 @@
+.cellule{
+    text-align: center;
+    font-size:0.7rem;
+    height:9rem;
+    z-index:1;
+}
+.cellule-tete{
+	height:10rem;
+    text-align: center;
+    font-size:0.7rem;
+    height:9rem;
+    z-index:1;
+}
+.cellule .tete, .cellule .jourC, .cellule-tete .tete, .cellule-tete .jourC{
+    padding:0 0 0 0;
+    height:1rem;
+    font-size: 0.8rem;
+}
+.tete{
+    margin-top:0.3rem;
+    display:inline-block;
+}   
+.no-tete{
+    display:none;
+}  
+.jourC{
+    padding-top:0.3rem;
+    display:inline-block;
+}
+.ev{
+    height:2rem;
+    padding:0.23rem 0 0 0;
+    font-size:1.0rem;
+    width:100%;
+    color:white;
+    z-index:7;
+    overflow-y: hidden;
+}
+.panne{
+    background-color: #ff952b;
+}
+.panne:hover{
+    background-color: #ffb66e;
+}
+
+.inspection{
+    background-color: #e6cd17;
+}
+
+.inspection:hover{
+    background-color: #ebdb6c;
+}
+
+.revision{
+    background-color: #4294ff;
+}
+.revision:hover{
+    background-color: #80b7ff;
+}
+.autre{
+    background-color: #b3b3b3;
+}
+.autre:hover{
+    background-color: #d6d6d6;
+}
+.ncm{
+    color: #8a8a8a;
+}
+.plus{
+    padding-top:0.3rem;
+    font-size:0.8rem;
+    color:black;
+}
+.circle{
+    background-color: #4f90ff;
+    color:white;
+    border-radius: 2rem;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+.jourPassee{
+    opacity: 50%;
+}
+
+ @media(max-width:600px){
+     .ev{
+        padding:0.2rem 0 0 0;
+        height:1rem;
+        width:100%;
+        font-size:0.4rem;
+     }
+
+     .cellule-tete{
+        text-align: center;
+        font-size:0.5rem;
+        height:4rem;
+    }
+    .cellule .tete, .cellule .jourC, .cellule-tete .tete, .cellule-tete .jourC{
+        padding:0 0 0 0;
+        margin:0 0 0 0;
+        height:0.4rem;
+        font-size: 0.35rem;
+    }
+    .cellule{
+        text-align: center;
+        font-size:0.5rem;
+        height:4rem;
+    }
+    .tete{
+        margin-top:0;
+        height:0.8rem;
+        display:block;
+    }    
+    .no-tete{
+        display:none;
+    }  
+    .jourC{
+        padding-top:0rem;
+        display:inline-block;
+    }
+    .evenements{
+        padding:0;
+        width:1.2rem;
+    }
+ }

@@ -1,0 +1,14 @@
+.icone-info-card{
+    margin-right: 5px;
+}
+.mat-form-field{
+    margin-right: 15px;
+}
+.ajout-utilisateur-form{
+   margin: 3rem;
+    width: 40%;
+}
+.bouton-ajouter{
+    color:#fff;
+     background-image: linear-gradient(to right, #CDDFA0, #6FD08C );
+}

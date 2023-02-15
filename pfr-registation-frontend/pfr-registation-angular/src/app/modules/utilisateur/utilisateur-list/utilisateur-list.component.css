@@ -1,0 +1,26 @@
+
+#bouton-ajouter{
+    width: 40px;
+    height: 40px;
+}
+.card-top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: 30px;
+    margin-right: 1rem;
+}
+.icone-info-card{
+    margin-right: 5px;
+}
+
+.content{
+    padding-top: 2rem;
+    padding-left: 2.6rem;
+}
+.mat-elevation-z4 {
+    width: 250px;
+}
+.container-div{
+width: 95%;
+}

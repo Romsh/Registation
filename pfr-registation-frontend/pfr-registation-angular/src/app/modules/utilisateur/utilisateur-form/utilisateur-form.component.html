@@ -1,0 +1,107 @@
+<mat-card class="ajout-utilisateur-form">
+
+  <h2>Ajouter un nouveau collaborateur</h2>
+
+  <!-- Début formulaire -->
+  <form [formGroup]="utilisateurForm" (ngSubmit)="ajouterUtilisateur()">
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">face</mat-icon>
+      <mat-label>Nom</mat-label>
+      <input matInput type="text" formControlName="nom" required>
+    </mat-form-field>
+    
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">face</mat-icon>
+      <mat-label>Prénom</mat-label>
+      <input matInput type="text" formControlName="prenom" required>
+    </mat-form-field>
+    
+    <mat-form-field appearance="legacy">
+      <mat-label>Matricule</mat-label>
+      <mat-icon matPrefix class="icone-info-card">fingerprint</mat-icon>
+      <input matInput type="text" formControlName="matricule" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Mot de passe</mat-label>
+      <mat-icon matPrefix class="icone-info-card">lock</mat-icon>
+      <input matInput type="password" formControlName="password" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">alternate_email</mat-icon>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="mail" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">phone</mat-icon>
+      <mat-label>Téléphone</mat-label>
+      <input matInput type="text" formControlName="tel" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">cake</mat-icon>
+      <mat-label>Date de Naissance</mat-label>
+      <input matInput type="date" formControlName="dateDeNaissance" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">euro</mat-icon>
+      <mat-label>Salaire</mat-label>
+      <input matInput type="number" formControlName="salaire" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">military_tech</mat-icon>
+      <mat-label>Statut</mat-label>
+      <mat-select formControlName="responsable" required>
+        <mat-option [value]=false>Employé</mat-option>
+        <mat-option [value]=true>Responsable</mat-option>
+      </mat-select>
+    </mat-form-field><br>
+
+    <h2>Adresse : </h2>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">looks_one</mat-icon>
+      <mat-label>Numéro</mat-label>
+      <input matInput type="number" formControlName="numero" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">edit_road</mat-icon>
+      <mat-label>Rue</mat-label>
+      <input matInput type="text" formControlName="rue" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">edit_road</mat-icon>
+      <mat-label>Complément</mat-label>
+      <input matInput type="text" formControlName="complement" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">markunread_mailbox
+      </mat-icon>
+      <mat-label>Code Postal</mat-label>
+      <input matInput type="text" formControlName="codePostal" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">location_city</mat-icon>
+      <mat-label>Ville</mat-label>
+      <input matInput type="text" formControlName="ville" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-icon matPrefix class="icone-info-card">public</mat-icon>
+      <mat-label>pays</mat-label>
+      <input matInput type="text" formControlName="pays" required>
+    </mat-form-field><br>
+
+    <button mat-raised-button [disabled]="!utilisateurForm.valid" type="submit" class="bouton-ajouter">Ajouter</button>
+  </form>
+  <!-- Fin formulaire -->
+
+</mat-card>

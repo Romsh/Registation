@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <h1>Ravi de vous revoir {{utilisateurSimple.prenom}} !</h1>
+    </div>
+    <div class="row">
+        <mat-card>
+            <button mat-icon-button [routerLink]="'/utilisateur/liste'">
+                <mat-icon class="icons-dashboard">groups</mat-icon>
+            </button>
+        </mat-card>
+        <div class="col-10">
+            <h2>Gestionnaire d'équipe</h2>
+            <h3>Gérer efficacement votre équipe, ajouter un collaborateur, supprimer un collaborateur</h3>
+            <h3>L'équipe compte actuellement : X collaborateurs</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-card>
+            <button mat-icon-button [routerLink]="'/evenement/agenda'">
+                <mat-icon class="icons-dashboard">today</mat-icon>
+            </button>
+        </mat-card>
+        <div class="col-10">
+            <h2>Agenda</h2>
+            <h3>Garder un oeil sur les événements passés et à venir, ainsi que sur les différents types d'événements</h3>
+            <h3>Aujourd'hui, X événements sont programmés</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-card>
+            <button mat-icon-button [routerLink]="'/materiel/liste'">
+                <mat-icon class="icons-dashboard">local_gas_station</mat-icon>
+            </button>
+        </mat-card>
+        <div class="col-10">
+            <h2>Gestionnaire de matériel</h2>
+            <h3>Avoir un aperçu et gérer intuitivement les différents matériels présents sur le site</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-card>
+            <button mat-icon-button [routerLink]="'/document/liste'">
+                <mat-icon class="icons-dashboard">description</mat-icon>
+            </button>
+        </mat-card>
+        <div class="col-10">
+            <h2>Gestionnaire de documents</h2>
+            <h3>Accéder à la bibliothèque de documents </h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-card>
+            <button mat-icon-button [routerLink]="'/moniteur'">
+                <mat-icon class="icons-dashboard">video_label</mat-icon>
+            </button>
+        </mat-card>
+        <div class="col-10">
+            <h2>Moniteur des installations</h2>
+            <h3>Visualiser rapidement l'état des installations principales et leur état de fonctionnement</h3>
+            <h3>Il y a actuellement X installations en panne</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-card>
+            <button mat-icon-button [routerLink]="'/moniteur'">
+                <mat-icon class="icons-dashboard">directions_car</mat-icon>
+            </button>
+        </mat-card>
+        <div class="col-10">
+            <h2>Garage</h2>
+            <h3>Accéder à l'application permettant de gérer les services que proposent le garage</h3>
+            <h3>La station ne dispose actuellement d'aucun garage</h3>
+        </div>
+    </div>
+
+</div>

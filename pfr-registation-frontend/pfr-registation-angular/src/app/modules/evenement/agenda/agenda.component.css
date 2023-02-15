@@ -1,0 +1,65 @@
+.calendrier{
+    padding:0;
+}
+.cal-titre{
+    padding-left:5rem;
+    text-align: center;
+    font-size:0.9rem;
+}
+.titre{
+    display:inline-block;
+    width:8rem;
+}
+.cal-ligne{
+    width:14.28%;
+}
+.cal-entete{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-top:0.2rem;
+}
+.auj{
+    display:inline-block;
+    margin-top:0.2rem;
+    font-size: 0.7rem;
+}
+table td{
+    padding:0;
+    width:14.28%;
+    height:9rem;
+} 
+
+
+@media(max-width:600px){
+    .container{
+        padding-right:0;
+    }
+    .auj{
+        margin: 0 0 0 0;
+        display:inline-block;
+        font-size: 0.3rem;
+
+    }
+    .cal-entete{
+        padding:0 0 0 0;
+        margin: 0.2rem 0 0.2rem 0;
+    }
+    .cal-titre{
+        padding-left:5rem;
+        text-align: center;
+        font-size:0.6rem;
+    }
+    .titre{
+        display:inline-block;
+        width:5rem;
+    }
+    table td{
+        padding:0;
+        width:14.28%;
+        height:5.5rem;
+    }
+
+    .prev,.next{
+        padding: 0 0.2rem 0.1rem 0.2rem;
+        font-size:0.8rem;
+    }
+}

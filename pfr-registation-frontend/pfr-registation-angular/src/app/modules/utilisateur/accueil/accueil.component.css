@@ -1,0 +1,15 @@
+.mat-toolbar{
+    background: #F4E285;
+    color: black;
+}
+#logoNavbar{
+    height: 50px;
+    width: 50px;
+}
+h1{
+    margin-left: 10px;
+}
+
+.icone-side{
+  margin-right: 5px;
+}

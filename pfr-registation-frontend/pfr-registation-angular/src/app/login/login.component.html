@@ -1,0 +1,130 @@
+<div class="container-fluid" style="padding: 5;">
+  <div class="row">
+
+    <div class="col col-gauche">
+      <div class="container">
+        <h1 id="nom-appli">REGISTATION</h1>
+        <div class="row">
+          <img src="assets/images/logo.png" alt="logo" id="logo">
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-droite">
+      <!-- Début Card Login -->
+      <mat-card class="card-login">
+        <div class="position-icon-login">
+          <mat-icon class="icon-login" [inline]="true">account_circle</mat-icon>
+        </div>
+        <mat-form-field class="full-width-input">
+          <mat-label>Matricule</mat-label>
+          <mat-icon matPrefix class="icone-info-card">fingerprint</mat-icon>
+          <input matInput [(ngModel)]="user.username" type="text" name="username" id="username" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix class="icone-info-card">lock</mat-icon>
+          <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" type="password"
+            name="password" id="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="div-bouton">
+          <button mat-raised-button color="primary" [disabled]='user.password.length==0 || user.username.length==0'
+            (click)="login()" class="bouton-login">Connexion
+          </button>
+        </div>
+      </mat-card>
+      <!-- Fin Card-login -->
+    </div>
+
+  </div>
+  <!-- Fin Row principale -->
+
+  <!-- ROW NOM APPLI -->
+  <div class="row align-items-center" style="background: #e9ecef; height: 300px;">
+    <div class="container">
+      <div class="row">
+        <h1>RegiStation, votre nouvelle appli indispensable</h1>
+      </div>
+    </div>
+  </div>
+  <!-- FIN -->
+
+  <div class="row">
+    <img src="\assets\images\photo-app.png" alt="photo-app" width=100%>
+  </div>
+
+  <!-- DEBUT ROW3 -->
+  <div class="row align-items-center" style="background: #f8f9fa; height: 500px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h2>Gain de temps</h2>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <p>Grâce à son interface simple à utiliser, vous allez pouvoir gagner du temps en effectuant vos tâches
+              quotidiennes</p>
+          </div>
+        </div>
+        <div class="col-3" style="text-align: center;">
+          <mat-icon style="font-size:100px">speed</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN ROW3  -->
+
+  <!-- DEBUT ROW4 -->
+  <div class="row align-items-center" style="background: #e9ecef; height: 500px;">
+    <div class="container">
+      <div class="row" style="margin-bottom: 40px;">
+        <h2>Des outils à votre disposition</h2>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <mat-icon style="font-size:100px">today</mat-icon>
+          <h3>Agenda</h3>
+        </div>
+        <div class="col-2">
+          <mat-icon style="font-size:100px">local_gas_station</mat-icon>
+          <h3>Gestionnaire de matériel</h3>
+        </div>
+        <div class="col-2">
+          <mat-icon style="font-size:100px">file_copy</mat-icon>
+          <h3>Gestionnaire de documents</h3>
+        </div>
+        <div class="col-2">
+          <mat-icon style="font-size:100px">groups</mat-icon>
+          <h3>Gestionnaire d'équipe</h3>
+        </div>
+        <div class="col-2">
+          <mat-icon style="font-size:100px">policy</mat-icon>
+          <h3>Sécurité</h3>
+        </div>
+        <div class="col-2">
+          <mat-icon style="font-size:100px">save</mat-icon>
+          <h3>Base de données</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN ROW4  -->
+    
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+  
+  <!-- Début Row présentation Equipe -->
+  
+  <app-presentation-team></app-presentation-team>
+ 
+    <a href="#">
+      <mat-icon class="backtop" [inline]="true">keyboard_arrow_up</mat-icon>
+    </a>
+ 
+</div>

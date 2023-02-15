@@ -1,0 +1,62 @@
+/* css formulaire */
+
+#title{
+    color:rgb(50, 74, 94);
+    text-align: center;
+}
+#form-materiel{
+    margin-top: 50px;
+    margin-left: 20%;
+}
+
+.icone-info-card{
+    margin-right: 5px;
+}
+.mat-form-field{
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 600px){
+.update-materiel-container{
+
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#card-head{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 15%;
+    width: auto;
+    background-image: url("/assets/images/ajoutMateriel2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+}
+@media screen and (min-width: 601px) {
+    .update-materiel-container{
+
+        margin-top: 5%;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    #card-head{
+        margin-top: 2%;
+        margin-left: 20%;
+        margin-right: 20%;
+        height: 80px;
+        width: auto;
+        background-image: url("/assets/images/ajoutMateriel3.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.bouton-update{
+    color:#fff;
+     background-image: linear-gradient(to right, #CDDFA0, #6FD08C );
+}
+

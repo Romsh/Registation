@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6 col-md-4" >
+      <mat-list class="case" >
+        <a mat-list-item [routerLink]="'/utilisateur/liste'" class="footer-liste"> Utilisateurs </a>
+        <a mat-list-item [routerLink]="'/materiel/liste'" class="footer-liste"> Materiel </a>
+       </mat-list>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <mat-list class="case" >
+        <a mat-list-item [routerLink]="'/evenement/agenda'" class="footer-liste"> Agenda </a>
+        <a mat-list-item [routerLink]="'/document/liste'" class="footer-liste">Documents </a>
+
+       </mat-list>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <mat-list class="case">
+        <a mat-list-item [routerLink]="'/utilisateur/accueil'" class="footer-liste"> Notre équipe</a>
+        <mat-list-item class="footer-liste"> © Régistation-2020 </mat-list-item>
+       </mat-list>
+    </div>
+  </div>
+</div>

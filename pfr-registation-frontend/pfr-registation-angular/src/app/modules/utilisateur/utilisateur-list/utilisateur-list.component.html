@@ -1,0 +1,64 @@
+<div class="container-div">
+    <!-- Début card top -->
+    <mat-card class="card-top">
+        <h2 style="margin: 0;">Les Collaborateurs</h2>
+        <button mat-mini-fab color="warn" id="bouton-ajouter" [routerLink]="'/utilisateur/add'" *ngIf="isResponsable">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-card>
+    <!-- Fin -->
+
+    <!-- Début Card -->
+    <div class="content" fxLayout="row wrap" fxLayoutGap="20px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let utilisateur of utilisateurs">
+            <mat-card class="mat-elevation-z4">
+                <mat-card-header>
+                    <img mat-card-avatar src="/assets/images/aurel.jpg" style="width: 40px;">
+                    <mat-card-title>{{utilisateur.prenom}}</mat-card-title>
+                    <mat-card-subtitle>{{utilisateur.nom}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="/assets/images/toad.jpg" alt="Photo principale">
+                <mat-card-content>
+                    <mat-list dense>
+                        <mat-list-item>
+                            <mat-icon matPrefix class="icone-info-card">fingerprint</mat-icon>
+                            {{utilisateur.matricule}}
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon matPrefix class="icone-info-card">cake</mat-icon>
+                            {{utilisateur.dateDeNaissance}}
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon matPrefix class="icone-info-card">alternate_email</mat-icon>
+                            {{utilisateur.mail}}
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon matPrefix class="icone-info-card">phone</mat-icon>
+                            {{utilisateur.tel}}
+                        </mat-list-item>
+
+                        <mat-list-item>
+                            <mat-icon matPrefix class="icone-info-card">military_tech</mat-icon>
+
+                            <div *ngIf="utilisateur.responsable; else elseBlock"> Responsable</div>
+                            <ng-template #elseBlock> Employé</ng-template>
+
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button [disabled] *ngIf="isResponsable">Modifier</button>
+
+                    <form #deleteUtilisateur=ngForm *ngIf="isResponsable">
+                        <input type="hidden" value="{{utilisateur.matricule}}">
+                        <button (click)='supprimerUtilisateur(utilisateur.matricule)' mat-raised-button color="warn"
+                            type="submit">Supprimer</button>
+                    </form>
+
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+    <!-- Fin Card -->
+
+</div>

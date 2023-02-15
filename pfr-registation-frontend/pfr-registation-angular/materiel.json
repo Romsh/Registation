@@ -1,0 +1,69 @@
+{
+  "materiel": [
+    {
+      "ref": "P001",
+      "marque": " Orion",
+      "modele": "P3000"
+    },
+    {
+      "ref": "C001",
+      "marque": "Neptune",
+      "modele": "CuvXL"
+    },
+    {
+      "id": 3,
+      "ref": "P0033",
+      "marque_materiel": "Orion",
+      "modele_materiel": "Pisto3000",
+      "prix_achat": 22222,
+      "etat": 1,
+      "date_achat": "14-09-2020",
+      "type_materiel": "Pompe",
+      "localisation": "allée 4"
+    },
+    {
+      "id": 4,
+      "ref": "P002",
+      "marque_materiel": "Orion",
+      "modele_materiel": "Pisto3000",
+      "prix_achat": 5,
+      "etat": 1,
+      "date_achat": "14-09-2020",
+      "type_materiel": "Pompe",
+      "localisation": "allée 4"
+    },
+    {
+      "id": 444,
+      "ref": "C222",
+      "marque_materiel": "Neptune",
+      "modele_materiel": "CV888XL",
+      "prix_achat": 2223,
+      "etat": 1,
+      "date_achat": "14-09-2020",
+      "type_materiel": "Pompe",
+      "localisation": "allée 4"
+    },
+    {
+      "id": 55,
+      "ref": "P0033",
+      "marque": "Vénus",
+      "modele": "P332",
+      "prix": 1232,
+      "etat": 1,
+      "date_achat": "14-09-2020",
+      "type_materiel": "Pistolet",
+      "localisation": "allée1"
+    },
+    {
+      "id": 44,
+      "ref": "P0001111",
+      "marque": "Vénus",
+      "modele": "P332",
+      "prix": 2112,
+      "etat": 1,
+      "date_achat": "2020-09-01",
+      "type_materiel": "Pompe",
+      "localisation": "allée 4"
+    }
+  ]
+}

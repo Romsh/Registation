@@ -1,0 +1,42 @@
+ <ng-container *ngIf="jour">
+    <div (click)="ajoutModal(ac)"> 
+        <div [ngClass]="tete?'cellule-tete':'cellule'">
+            <span class="tete w-100" [ngClass]="[tete==true?'tete':'no-tete',headColor]">{{jour.split('-')[0]}}</span>
+            <span class="jourC w-100" [ngClass]="headColor"><span [ngClass]="testJourActuel(jour)?'circle':'test'">{{jour.split('-')[1]}}</span></span>
+            <div class="evenements w-100">
+                {{resetSpan()}}
+                <ng-container *ngIf="eventInInterval">
+                    <ng-container *ngFor="let e of eventInInterval; let i = index">
+                        {{incSpan()}}
+                        <ng-container *ngIf="!testSpan(); else plusSpan">
+                            <span class="ev btn btn-light"  [ngClass]="[getEventColor(e),testJourPasse()?'jourPassee':'test']" (click)="$event.stopPropagation();editModal(e,ac);">
+                                {{e.titre}}
+                            </span>
+                        </ng-container> 
+                        <ng-template #plusSpan>
+                            <ng-container *ngIf="(getNbSpan()<3)&&!testFini(i+1) else nonFini">
+                                <span class="ev btn btn-light"  [ngClass]="[getEventColor(e),testJourPasse()?'jourPassee':'test']" (click)="$event.stopPropagation();editModal(e,ac);">
+                                    {{e.titre}}
+                                </span>
+                            </ng-container>
+                            <ng-template #nonFini>
+                                <ng-container *ngIf="getNbSpan()<=3&&testFini(i+1) else sup3">
+                                    <span class="ev btn btn-light"  [ngClass]="[getEventColor(e),testJourPasse()?'jourPassee':'test']" (click)="$event.stopPropagation();editModal(e,ac);">
+                                        {{e.titre}}
+                                    </span>
+                                </ng-container>
+                                <ng-template #sup3>
+                                    <ng-container *ngIf="testFini(i+1)">
+                                        <span class="ev btn btn-light plus" (click)="plusModal();$event.stopPropagation();">
+                                            {{getNbSpan()-2}} autres
+                                        </span>
+                                    </ng-container>
+                                </ng-template>
+                            </ng-template>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
+            </div> 
+        </div>
+    </div>
+ </ng-container>

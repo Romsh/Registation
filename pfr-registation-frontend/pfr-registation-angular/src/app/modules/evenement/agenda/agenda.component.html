@@ -1,0 +1,27 @@
+<div class="container agendacontainer">
+    <div class="cal-entete row">
+        <div class="col-1">
+            <button class="btn btn-outline-secondary auj" (click)='getMonthAgenda("n")'>Aujourd'hui</button>
+        </div>
+        <div class="col-10 cal-titre">
+            <button class="prev btn btn-outline-secondary" (click)='getMonthAgenda("p")'><</button>
+            <span class="titre">{{titre}}</span>    
+            <button class="next btn btn-outline-secondary" (click)='getMonthAgenda("s")'>></button>
+        </div>
+    </div>
+    <div class="calendrier w-100">
+        <table class="table table-bordered col">
+            <tr class="cal-ligne col-md-1" *ngFor="let cld of groupsCalendar; index as i">
+                <td *ngFor="let el of cld; index as j">
+                    <app-cellule 
+                        [ac]=ac
+                        [dates]=el 
+                        [jour]=getCalendrier()[i*7+j] 
+                        [event]="cal.event" 
+                        [tete]='i==0' 
+                        [headColor]=getCalendarColor(getCalendrier()[i*7+j])></app-cellule>
+                </td>
+            </tr> 
+        </table>    
+    </div>
+</div>

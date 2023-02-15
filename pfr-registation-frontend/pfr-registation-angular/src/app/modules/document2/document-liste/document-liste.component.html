@@ -1,0 +1,85 @@
+<mat-card class="card-top">
+  <h2 style="margin: 0;"> Documents </h2>
+  <button mat-mini-fab color="primary" id="bouton-ajouter" [routerLink]="'/document/formulaire'">
+    <mat-icon>add</mat-icon></button>
+  <div ></div>
+</mat-card>
+<div class="content" fxLayout="row wrap" fxLayoutGap="2% grid">
+  <div fxFlex="2%" fxFlex="2%" fxFlex="2%">
+    <mat-card class="mat-elevation-z4">
+      <img mat-card-image src="/assets/images/fiche-poste-medium.jpg" alt="photo illustrant les fiches de poste">
+      <mat-card-content>
+        <h1>Fiches de poste</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="content" fxLayout="row wrap" fxLayoutGap="10% grid">
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+    <mat-card class="mat-elevation-z4">
+      <img mat-card-image src="/assets/images/paie-low.jpg" alt="photo illustrant les fiches de paie">
+      <mat-card-content>
+        <h1>Fiches de paie</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="content" fxLayout="row wrap" fxLayoutGap="10% grid">
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+    <mat-card class="mat-elevation-z4">
+      <img mat-card-image src="/assets/images/facture-low.jpg" alt="photo illustrant les factures">
+      <mat-card-content>
+        <h1>Factures</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="content" fxLayout="row wrap" fxLayoutGap="10% grid">
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+    <mat-card class="mat-elevation-z4">
+      <img mat-card-image src="/assets/images/compte-rendu-low.jpg" alt="photo illustrant les comptes-rendus">
+      <mat-card-content>
+        <h1>Comptes-Rendus</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="content" fxLayout="row wrap" fxLayoutGap="10% grid">
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+    <mat-card class="mat-elevation-z4">
+      <img mat-card-image src="/assets/images/autres-documents-low.jpg" alt="photo illustrant les autres documents">
+      <mat-card-content>
+        <h1>Autres documents</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<!-- liste des documents -->
+<div class="container">
+  <h1>Liste des documents</h1>
+  <table class="rwd-table"></table>
+  <thead>
+  <tr>
+    <th scope="col">id du document</th>
+    <th scope="col">nom document</th>
+    <th scope="col">categorie du document</th>
+    <th scope="col">date d'ajout du document</th>
+    <th scope="col">date de dernière modification du document</th>
+    <th scope="col">description du document</th>
+    <th scope="col">commentaires du document</th>
+    <th scope="col">matricule de l'utilisateur à son origine</th>
+  </tr>
+  </thead>
+</div>
+<tbody>
+<tr *ngFor="let documents2 of documentList2">
+  <td data-th="idDocument">{{documents2.idDocument}}</td>
+  <td data-th="nomDocument">{{documents2.nomDocument}}</td>
+  <td data-th="categorieDocument">{{documents2.categorieDocument}}</td>
+  <td data-th="dateAjoutDocument">{{documents2.dateAjoutDocument}}</td>
+  <td data-th="dateDerniereModificationDocument">{{documents2.dateDerniereModificationDocument}}</td>
+  <td data-th="descriptionDocument">{{documents2.descriptionDocument}}</td>
+  <td data-th="commentairesDocument">{{documents2.commentairesDocument}}</td>
+  <td data-th="matriculeUtilisateur">{{documents2.matriculeUtilisateur}}</td>
+</tr>
+</tbody>

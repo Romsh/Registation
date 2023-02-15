@@ -1,0 +1,72 @@
+<ng-container *ngIf="event">
+    <button class="btn btn-light float-right mb-1" (click)="close();$event.stopPropagation();">X</button>
+    <div mat-dialog-content   cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+        <form class="form-group"  #eventForm="ngForm">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="titre">Titre</span>
+                </div>
+                <input type="text" class="form-control"
+                    aria-label="description" aria-describedby="titre" 
+                    placeholder="Titre de l'évènement" value="{{event.titre}}"
+                    name="titre" [(ngModel)]="event.titre" #description="ngModel" required>
+            </div>
+    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="type">Type</span>
+                </div>
+                <select class="custom-select" id="type" name="type" [(ngModel)]="event.type" required #type="ngModel">
+                    <option value="Révision" [selected]="event.type=='Révision'">Révision</option>
+                    <option value="Inspection" [selected]="event.type=='Inspection'">Inspection</option>
+                    <option value="Panne" [selected]="event.type=='Panne'">Panne</option>
+                    <option value="Autre" [selected]="event.type=='Autre'">Autre</option>
+                </select>
+            </div>
+    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="desc">Description</span>
+                </div>
+                <textarea type="text" class="form-control"
+                    aria-label="description" aria-describedby="desc" 
+                    placeholder="Description de l'évènement" value="{{event.description}}"
+                    name="description" [(ngModel)]="event.description" #description="ngModel" required></textarea>
+            </div>
+    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="dateD">Date début</span>
+                </div>
+                <input class="text-center" [matDatepicker]="basicDatepicker" [(ngModel)]="event.date_debut" name="date_debut">
+                <mat-datepicker-toggle [for]="basicDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker  [startAt]="event.date_debut" #basicDatepicker></mat-datepicker>
+            </div>
+    
+    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="dateF">Date fin</span>
+                </div>
+                <input class="text-center" [matDatepicker]="basicDatepicker2" [(ngModel)]="event.date_fin"  name="date_fin">
+                <mat-datepicker-toggle [for]="basicDatepicker2"></mat-datepicker-toggle>
+                <mat-datepicker  [startAt]="event.date_fin" #basicDatepicker2></mat-datepicker>
+            </div> 
+    
+            <div class="boutons">
+                <button class="btn btn-light btn-es" [disabled]="!eventForm.valid" (click)="submitDelete()">
+                    <span class="material-icons">
+                        delete_forever
+                    </span>
+                </button>
+    
+                <button class="btn btn-light btn-es" [disabled]="!eventForm.valid" (click)="submitEdit()">
+                    <span class="material-icons">
+                    edit
+                    </span>
+                </button>
+            </div>
+                
+        </form> 
+    </div>
+</ng-container>

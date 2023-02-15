@@ -1,0 +1,117 @@
+<mat-card class="card-top">
+    <h2>Liste d'équipements</h2>
+    <button mat-mini-fab color="warn" id="bouton-ajouter" [routerLink]="'/materiel/ajouter'">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-card>
+
+<div class="content" fxLayout="row wrap" fxLayoutGap="10% grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+        <mat-card class="mat-elevation-z4">
+            <img class="images" mat-card-image src="/assets/images/pompe.jpg">
+            <mat-card-content>
+                <h1>
+                    POMPES
+                </h1>
+            </mat-card-content>
+            <mat-card-actions>
+                <form #getType=ngForm>
+                    <input type="hidden" value=1>
+                    <button (click)='getAllByTypeInit("POMPE", 1)' class="bouton-afficher" mat-raised-button
+                        type="submit">Afficher</button>
+                </form>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+        <mat-card class="mat-elevation-z4">
+            <img class="images" mat-card-image src="/assets/images/cuve.jpg">
+            <mat-card-content>
+                <h1>
+                    CUVES
+                </h1>
+            </mat-card-content>
+            <mat-card-actions>
+                <form #getType=ngForm>
+                    <input type="hidden" value=2>
+                    <button (click)='getAllByTypeInit("CUVE", 1)' class="bouton-afficher" mat-raised-button
+                        type="submit">Afficher</button>
+                </form>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+        <mat-card class="mat-elevation-z4">
+            <img  class="images" mat-card-image src="/assets/images/boutique.jpg">
+            <mat-card-content>
+                <h1 class="titreType">
+                    BOUTIQUE
+                </h1>
+            </mat-card-content>
+            <mat-card-actions>
+                <form #getType=ngForm>
+                    <input type="hidden" value=3>
+                    <button (click)='getAllByTypeInit("BOUTIQUE", 1)' mat-raised-button class="bouton-afficher"
+                        type="submit">Afficher</button>
+                </form>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Liste du matériel</h1>
+    <table class="rwd-table">
+        <thead>
+            <tr>
+                <th scope="col">Référence</th>
+                <th scope="col">Marque</th>
+                <th scope="col">Modèle</th>
+                <th scope="col">Etat actuel</th>
+                <th scope="col">Localisation</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mat of list_materiel" (click)="infoModal(mat.idMat)">
+                <td data-th="Référence">{{mat.ref}}</td>
+                <td data-th="Marque">{{mat.marque}}</td>
+                <td data-th="Modèle">{{mat.modele}}</td>
+                <td data-th="Etat">{{mat.etat}}</td>
+                <td data-th="Localisation">{{mat.localisation}}</td>
+                <td>
+                    <div>
+                        <form #getIdMaterielUpdate=ngForm>
+                            <input type="hidden" name=idMaterielUpdate [(ngModel)]=mat.idMat required
+                                #idMaterielUpdate="ngModel">
+
+                            <button mat-mini-fab class="bouton-modifier"
+                                (click)="redirectToUpdate(mat.idMat); $event.stopPropagation()">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </form>
+
+                        <form #getIdMaterielUtils=ngForm>
+                            <input type="hidden" name=idMaterielUtils [(ngModel)]=mat.idMat required
+                                #idMaterielUtils="ngModel">
+                            <button mat-mini-fab color="warn" id="bouton-supprimer"
+                                (click)="$event.stopPropagation(); deleteModal(mat.idMat)">
+                                <mat-icon>delete_sweep</mat-icon>
+                            </button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+            <div id="btn-container">
+                <button  mat-raised-button id="btn-first" (click)="getFirst()">Début</button>
+                <button mat-raised-button id="btn-precedent" (click)="getPrevious()">Précédent</button>
+                <button mat-raised-button id="page-en-cours">Page {{pageEnCours}}</button>
+                <button mat-raised-button id="btn-suivant" (click)="getNext()"> Suivant</button>
+                <!-- <button mat-raised-button id="btn-end" (click)="getLast()">Fin</button> -->
+            </div>
+</div>

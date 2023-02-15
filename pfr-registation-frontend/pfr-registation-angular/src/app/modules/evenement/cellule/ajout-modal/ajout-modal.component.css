@@ -1,0 +1,20 @@
+.cal-icon{
+    padding-top:0.1rem;
+    font-size:1rem;
+}
+
+.ng-invalid:not(form){
+    border-left:5px solid red;
+}
+.ng-valid:not(form){
+    border-left:5px solid green;
+}
+
+.datepicker{
+    overflow: visible !important;
+}
+
+.amc{
+    position:relative;
+    cursor: move;
+}

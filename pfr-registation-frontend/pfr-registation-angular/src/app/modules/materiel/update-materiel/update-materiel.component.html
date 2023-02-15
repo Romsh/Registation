@@ -1,0 +1,104 @@
+<mat-card id="card-head">
+
+</mat-card>
+
+<mat-card class="update-materiel-container">
+
+    <h1 id="title">Modification des informations du matériel</h1>
+    <div id="form-materiel">
+
+        <form #updateMaterielForm=ngForm (ngSubmit)=updateMateriel()>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Référence</mat-label>
+                <mat-icon matPrefix class="icone-info-card">reorder</mat-icon>
+                <input matInput type="text" name=ref [(ngModel)]=materiel.ref required #ref="ngModel">
+                <div [hidden]="ref.valid || ref.pristine">
+                    La référence est obligatoire.
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Marque</mat-label>
+                <mat-icon matPrefix class="icone-info-card">branding_watermark</mat-icon>
+                <input matInput type="text" name=marque [(ngModel)]=materiel.marque required #marque="ngModel">
+                <div [hidden]="marque.valid || marque.pristine">
+                    La marque est obligatoire.
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Modèle</mat-label>
+                <mat-icon matPrefix class="icone-info-card">local_offer</mat-icon>
+                <input matInput type="text" name=modele [(ngModel)]=materiel.modele required #modele="ngModel">
+                <div [hidden]="modele.valid || modele.pristine">
+                    Le modele est obligatoire.
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Prix</mat-label>
+                <mat-icon matPrefix class="icone-info-card">euro_symbol</mat-icon>
+                <input matInput type="number" name=prix [(ngModel)]=materiel.prix required #prix="ngModel">
+                <div [hidden]="prix.valid || prix.pristine">
+                    La prix d'achat est obligatoire.
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Etat du matériel</mat-label>
+                <mat-icon matPrefix class="icone-info-card">settings</mat-icon>
+                <mat-select name=etat [(ngModel)]=materiel.etat required #etat="ngModel">>
+                    <mat-option [value]=1>En cours de fonctionnement</mat-option>
+                    <mat-option [value]=2>Problème mineur détecté</mat-option>
+                    <mat-option [value]=3>En panne</mat-option>
+                </mat-select>
+                <div [hidden]="etat.valid || etat.pristine">
+                    L'état du matériel est obligatoire.
+                </div>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Date d'achat</mat-label>
+                <mat-icon matPrefix class="icone-info-card">date_range</mat-icon>
+                <input matInput type="date" name=dateAchat [(ngModel)]=materiel.dateAchat required #dateAchat="ngModel">
+                <div [hidden]="dateAchat.valid || dateAchat.pristine">
+                    La date d'achat est obligatoire.
+                </div>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Type de Matériel</mat-label>
+                <mat-icon matPrefix class="icone-info-card">local_gas_station</mat-icon>
+                <mat-select name=typeMateriel [(ngModel)]=materiel.typeMateriel required #typeMateriel="ngModel"
+                    value="">
+                    <mat-option *ngFor="let item of typeMatList" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+                <div [hidden]="typeMateriel.valid || typeMateriel.pristine">
+                    Le type de matériel est obligatoire.
+                </div>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Localisation</mat-label>
+                <mat-icon matPrefix class="icone-info-card">place</mat-icon>
+                <input matInput type="text" name=localisation [(ngModel)]=materiel.localisation required
+                    #localisation="ngModel">
+                <div [hidden]="localisation.valid || localisation.pristine">
+                    La localisation est obligatoire.
+                </div>
+            </mat-form-field>
+
+            <div>
+                <button mat-raised-button [disabled]=!updateMaterielForm.valid class="bouton-update">Modifier le
+                    matériel</button>
+            </div>
+        </form>
+
+    </div>
+</mat-card>

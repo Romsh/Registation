@@ -1,0 +1,50 @@
+
+<form [formGroup]="documentForm2">
+  <div>
+    Nom du document :
+     <mat-icon> insert_drive_file</mat-icon>
+    <input type="text" [formControl]="documentForm2.controls.nomDocument">
+  </div>
+  <div>
+    Catégorie du document :
+      <mat-icon>filter_frames</mat-icon>
+     <input type="text" [formControl]="documentForm2.controls.categorieDocument">
+  </div>
+<div>
+  <mat-icon>calendar_today</mat-icon>
+  <input matInput [matDatepicker]="picker1" formControlName="dateAjoutDocument" placeholder="Date d'ajout du document" required>
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker touchUi="true" #picker1></mat-datepicker>
+</div>
+  <div>
+    <mat-icon>bookmark</mat-icon>
+    <input matInput [matDatepicker]="picker2" formControlName="dateDerniereModificationDocument" placeholder="Dernière date de modification du document" required>
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker touchUi="true" #picker2></mat-datepicker>
+  </div>
+  <div>
+    Description du Document :
+     <mat-icon>description</mat-icon>
+    <input type="text" [formControl]="documentForm2.controls.descriptionDocument">
+  </div>
+  <div>
+    Commentaires du Document :
+     <mat-icon>feedback</mat-icon>
+    <input type="text" [formControl]="documentForm2.controls.commentairesDocument">
+  </div>
+  <div>
+    Matricule de l'utilisateur à l'origine du document :
+     <mat-icon>fingerprint</mat-icon>
+    <input type="text" [formControl]="documentForm2.controls.matriculeUtilisateur">
+  </div>
+  <div>
+    <button mat-raised-button [disabled]=!documentForm2.valid class="bouton-ajouter" (click)="ajouterDocument()" (submit)="ajouterDocument()">Ajouter les informations du document
+    </button>
+  </div>
+  <div>
+    <input type="file" id="customFile" (change)="selectFile($event)">
+<!--    <button class="btn btn-primary" [disabled]="!selectedFiles || admincheck || status" (click)="upload()"> Sauver le document</button>-->
+    <button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload()"> Sauver le document</button>
+    <button class="btn btn-success" style="margin-left: 10px" (click)="downloadFile()">Aperçu du document</button>
+  </div>
+</form>

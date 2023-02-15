@@ -1,0 +1,36 @@
+.panne{
+    background-color: #ff952b;
+}
+.panne:hover{
+    background-color: #ffb66e;
+}
+
+.inspection{
+    background-color: #e6cd17;
+}
+
+.inspection:hover{
+    background-color: #ebdb6c;
+}
+
+.revision{
+    background-color: #4294ff;
+}
+.revision:hover{
+    background-color: #80b7ff;
+}
+.autre{
+    background-color: #b3b3b3;
+}
+.autre:hover{
+    background-color: #d6d6d6;
+}
+
+.ev{
+    height:2rem;
+    padding:0.2rem 0 0 0;
+    font-size:1.0rem;
+    width:100%;
+    color:white;
+    
+}

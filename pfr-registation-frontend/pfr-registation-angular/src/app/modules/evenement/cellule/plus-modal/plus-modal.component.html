@@ -1,0 +1,8 @@
+<div mat-dialog-content>
+    <button class="btn btn-light float-right mb-1" (click)="onNoClick();$event.stopPropagation();">X</button>
+    <ng-container *ngFor="let e of data.eventData; let i = index">
+        <span class="ev btn btn-light"  [ngClass]='getEventColor(e)' (click)="$event.stopPropagation();editModal(e,data.ac);">
+            {{e.titre}}
+        </span>
+    </ng-container>
+</div>
