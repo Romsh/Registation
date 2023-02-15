@@ -1,0 +1,45 @@
+logging:
+  file:
+    name: ${user.home}/Registation/app-registation.log
+  level:
+    fr:
+      afpa: info
+    root: warn
+
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.1.69/registation
+    username: registation_user
+    password: pwd
+    driver-class-name: org.postgresql.Driver
+    
+  jpa:
+    hibernate:      ddl-auto: update    show-sql: false
+  
+  mail: 
+    default-encoding: UTF-8 
+    host: smtp.gmail.com 
+    username: registationcdatest@gmail.com 
+    password: bvrqpkjoquzrrysc #app password generated mathieu 
+    port: 587 
+    properties: 
+      mail: 
+        smtp: 
+          auth: true 
+          starttls: 
+            enable: true
+          ssl.trust: smtp.gmail.com  
+    protocol: smtp 
+    test-connection: false
+  
+  
+# configuration spring-mvc
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+      
+registation:
+  token:
+    secret: azertyui #multiple 4 ? taille
+    

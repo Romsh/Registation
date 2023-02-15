@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+
+.cart{
+	min-height:20rem;
+	height:auto !important;        /* for IE as it does not support min-height */
+	height:20rem; 
+}
+
+.books{
+	min-height:50rem;
+	height:auto !important;        /* for IE as it does not support min-height */
+	height:50rem;  
+}
+
+.ajoutPanier{
+	margin-top:20px;
+	vertical-align: middle;
+	font-size: 12px;
+} 
+
+.panierLivre{
+	font-size:15px;
+}
+.livres{
+	margin:auto;
+}
